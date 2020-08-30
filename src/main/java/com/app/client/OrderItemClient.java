@@ -17,17 +17,17 @@ import org.springframework.cloud.openfeign.FeignClient;
 public interface OrderItemClient {
 
     @GetMapping(path = "/items", produces = "application/json")
-    public List<ItemTO> getItems();
+    List<ItemTO> getItems();
 
     @GetMapping(path = "/items/{id}", produces = "application/json")
-    public ItemTO getItemsById(@PathVariable("id") Integer id);
+    ItemTO getItemsById(@PathVariable("id") Integer id);
 
     @PostMapping("/items")
-    public ItemTO saveItem(@Valid @RequestBody ItemTO itemTO);
+    ItemTO saveItem(@Valid @RequestBody ItemTO itemTO);
 
     @PutMapping("/items")
-    public ItemTO updateItem(@Valid @RequestBody ItemTO itemTO);
+    ItemTO updateItem(@Valid @RequestBody ItemTO itemTO);
 
     @DeleteMapping("/items/{id}")
-    public int deleteItem(@PathVariable("id") Integer id);
+    int deleteItem(@PathVariable("id") Integer id);
 }
