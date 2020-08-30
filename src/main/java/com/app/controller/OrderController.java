@@ -1,7 +1,7 @@
-package brijesh.bhatt.controller;
+package com.app.controller;
 
-import brijesh.bhatt.service.OrderService;
-import brijesh.bhatt.to.OrderTO;
+import com.app.service.OrderService;
+import com.app.to.OrderTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,8 +34,6 @@ public class OrderController {
 
     @PostMapping("/orders")
     public OrderTO saveItem(@Valid @RequestBody OrderTO orderTO) {
-        System.out.println("saveItemsaveItem  &&&&&");
-        System.out.println(orderTO.getItemTOList().size());
         return orderService.createItem(orderTO);
     }
 

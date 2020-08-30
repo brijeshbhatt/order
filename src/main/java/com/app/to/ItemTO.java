@@ -1,4 +1,4 @@
-package brijesh.bhatt.to;
+package com.app.to;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
@@ -6,7 +6,7 @@ import javax.validation.constraints.Positive;
 
 public class ItemTO {
 
-    private int id;
+    private Integer id;
 
     @NotBlank(message = "Code is mandatory.")
     private String code;
@@ -18,18 +18,18 @@ public class ItemTO {
     @Max(value = 20, message = "quantity can not be greater than 20.")
     private int quantity;
 
-    public ItemTO(int id, String code, String name, int quantity) {
+    public ItemTO(Integer id, String code, String name, int quantity) {
         this.id = id;
         this.code = code;
         this.name = name;
         this.quantity = quantity;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

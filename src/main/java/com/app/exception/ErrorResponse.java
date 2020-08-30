@@ -1,4 +1,4 @@
-package brijesh.bhatt.exception;
+package com.app.exception;
 
 public class ErrorResponse {
 

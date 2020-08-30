@@ -1,4 +1,4 @@
-package brijesh.bhatt.to;
+package com.app.to;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Positive;
@@ -7,7 +7,7 @@ import java.util.List;
 
 public class OrderTO {
 
-    private int orderId;
+    private Integer orderId;
 
     @NotBlank(message = "customerName is mandatory.")
     private String customerName;
@@ -28,11 +28,11 @@ public class OrderTO {
         this.total = total;
     }
 
-    public int getOrderId() {
+    public Integer getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(int orderId) {
+    public void setOrderId(Integer orderId) {
         this.orderId = orderId;
     }
 
@@ -60,11 +60,11 @@ public class OrderTO {
         this.total = total;
     }
 
-    public List<brijesh.bhatt.to.ItemTO> getItemTOList() {
+    public List<ItemTO> getItemTOList() {
         return itemTOList;
     }
 
-    public void setItemTOList(List<brijesh.bhatt.to.ItemTO> itemTOList) {
+    public void setItemTOList(List<ItemTO> itemTOList) {
         this.itemTOList = itemTOList;
     }
 }

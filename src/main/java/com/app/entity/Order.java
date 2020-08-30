@@ -1,4 +1,4 @@
-package brijesh.bhatt.entity;
+package com.app.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

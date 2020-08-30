@@ -1,6 +1,6 @@
-package brijesh.bhatt.controller;
+package com.app.client;
 
-import brijesh.bhatt.to.ItemTO;
+import com.app.to.ItemTO;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,21 +13,21 @@ import java.util.List;
 
 import org.springframework.cloud.openfeign.FeignClient;
 
-@FeignClient(value = "item-client", url = "http://localhost:8081/online")
+@FeignClient(value = "order-item", url = "${itemservice.url}")
 public interface OrderItemClient {
 
     @GetMapping(path = "/items", produces = "application/json")
-    List<ItemTO> getItems();
+    public List<ItemTO> getItems();
 
     @GetMapping(path = "/items/{id}", produces = "application/json")
-    ItemTO getItemsById(@PathVariable("id") int id);
+    public ItemTO getItemsById(@PathVariable("id") Integer id);
 
     @PostMapping("/items")
-    ItemTO saveItem(@Valid @RequestBody ItemTO itemTO);
+    public ItemTO saveItem(@Valid @RequestBody ItemTO itemTO);
 
     @PutMapping("/items")
-    ItemTO updateItem(@Valid @RequestBody ItemTO itemTO) ;
+    public ItemTO updateItem(@Valid @RequestBody ItemTO itemTO);
 
     @DeleteMapping("/items/{id}")
-    int deleteBook(@PathVariable("id") int id) ;
+    public int deleteItem(@PathVariable("id") Integer id);
 }
